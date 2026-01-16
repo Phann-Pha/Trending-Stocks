@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Trending Stock</string>
+
+    <string name="investment">Investment</string>
+    <string name="trending_stock">Trending Stock</string>
+    <string name="view_all">View all</string>
+
+</resources>
