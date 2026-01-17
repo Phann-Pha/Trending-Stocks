@@ -1,8 +1,11 @@
 package com.domain.trending.stock.navigate.view
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -13,6 +16,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -54,6 +58,7 @@ fun BottomNavigationBarView(navController: NavHostController)
 
     var selected by rememberSaveable { mutableIntStateOf(0) }
     NavigationBar(
+        modifier = Modifier.background(color = colorResource(id = R.color.white_color).copy(alpha = .5f)),
         containerColor = colorResource(id = R.color.transparent),
         contentColor = colorResource(id = R.color.transparent)
     ) {
@@ -67,8 +72,8 @@ fun BottomNavigationBarView(navController: NavHostController)
                 icon = {
                     Icon(
                         modifier = Modifier
-                            .fillMaxSize()
-                            .padding(horizontal = 2.dp)
+                            .size(size = 45.dp)
+                            .clip(shape = RoundedCornerShape(size = 12.dp))
                             .background(
                                 color = if (index == selected)
                                 {
@@ -79,7 +84,7 @@ fun BottomNavigationBarView(navController: NavHostController)
                                     colorResource(id = R.color.transparent)
                                 }
                             )
-                            .padding(all = 24.dp),
+                            .padding(all = 12.dp),
                         tint = colorResource(id = if (index == selected) R.color.white_color else R.color.black_color),
                         painter = painterResource(id = item.icon),
                         contentDescription = null
