@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.domain.trending.stock.R
 import com.domain.trending.stock.navigate.model.BottomNavigationItem
-import com.domain.trending.stock.navigate.route.NavigationScreen.HomeScreen
+import com.domain.trending.stock.navigate.route.NavigationScreen
 
 @Composable
 fun BottomNavigationBarView(navController: NavHostController)
@@ -28,27 +28,27 @@ fun BottomNavigationBarView(navController: NavHostController)
         BottomNavigationItem(
             title = "",
             icon = R.drawable.icon_home,
-            route = HomeScreen.rout
+            route = NavigationScreen.HomeScreen.rout
         ),
         BottomNavigationItem(
             title = "",
             icon = R.drawable.icon_stock,
-            route = HomeScreen.rout
+            route = NavigationScreen.StockScreen.rout
         ),
         BottomNavigationItem(
             title = "",
             icon = R.drawable.icon_report,
-            route = HomeScreen.rout
+            route = NavigationScreen.ReportScreen.rout
         ),
         BottomNavigationItem(
             title = "",
             icon = R.drawable.icon_wallet,
-            route = HomeScreen.rout
+            route = NavigationScreen.BalanceScreen.rout
         ),
         BottomNavigationItem(
             title = "",
             icon = R.drawable.icon_person,
-            route = HomeScreen.rout
+            route = NavigationScreen.AccountScreen.rout
         )
     )
 

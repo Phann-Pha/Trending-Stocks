@@ -16,7 +16,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.createGraph
-import com.domain.trending.stock.navigate.route.NavigationScreen.HomeScreen
+import com.domain.trending.stock.navigate.route.NavigationScreen
 import com.domain.trending.stock.features.home.presentation.view.HomeScreenView
 import com.domain.trending.stock.features.home.presentation.viewmodel.HomeScreenViewModel
 import com.domain.trending.stock.navigate.view.BottomNavigationBarView
@@ -51,9 +51,21 @@ class AppMainActivity : ComponentActivity()
             modifier = Modifier.fillMaxSize(),
             bottomBar = { BottomNavigationBarView(navController) }
         ) { paddings ->
-            val graph = navController.createGraph(startDestination = HomeScreen.rout) {
-                composable(route = HomeScreen.rout) {
+            val graph = navController.createGraph(startDestination = NavigationScreen.HomeScreen.rout) {
+                composable(route = NavigationScreen.HomeScreen.rout) {
                     HomeScreenView(viewmodel = viewmodel, paddings = paddings)
+                }
+                composable(route = NavigationScreen.StockScreen.rout) {
+                    //
+                }
+                composable(route = NavigationScreen.ReportScreen.rout) {
+                    //
+                }
+                composable(route = NavigationScreen.BalanceScreen.rout) {
+                    //
+                }
+                composable(route = NavigationScreen.AccountScreen.rout) {
+                    //
                 }
             }
             NavHost(
